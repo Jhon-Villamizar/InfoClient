@@ -1,10 +1,10 @@
 export class Client {
-    constructor(id = 0, description = '', nit = '', fullname = '', adress = '', phone = '', city = '', state = '', country = '', creditlim = 0, avalcredit = 0, visitsperc = 0, date = '', representative = '', visit = 0, descVisit = ''){
+    constructor(id = null, description = '', nit = '', fullname = '', address = '', phone = '', city = '', state = '', country = '', creditlim = null, avalcredit = null, visitsperc = null, date = '', representative = '', visit = null, descVisit = ''){
         this.id = id,
         this.description =description,
         this.nit =nit,
         this.fullname =fullname,
-        this.adress =adress,
+        this.address =address,
         this.phone =phone,
         this.city =city,
         this.state =state,
@@ -21,7 +21,7 @@ export class Client {
     description : string;
     nit : string;
     fullname : string;
-    adress : string;
+    address : string;
     phone : string;
     city : string;
     state : string;

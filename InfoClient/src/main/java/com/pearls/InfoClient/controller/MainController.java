@@ -1,9 +1,8 @@
-package com.pearls.InfoClient;
+package com.pearls.InfoClient.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,15 +10,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.pearls.InfoClient.model.Client;
+import com.pearls.InfoClient.repositories.ClientRepository;
 
 @RestController
 @RequestMapping(path="/api")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 class MainController {
 	@Autowired 
-	private final ClientRepository repository;
+	ClientRepository repository;
 	
 	MainController(ClientRepository repository) {
 	    this.repository = repository;
@@ -27,17 +27,17 @@ class MainController {
 	
 	// Aggregate root
 	
-	@GetMapping("/all")
+	@GetMapping("/")
 	List<Client> all() {
 		return repository.findAll();
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/")
 	Client newClient(@RequestBody Client newClient) {
 	    return repository.save(newClient);
 	}
 
-	@PutMapping("/client/{id}") 
+	@PutMapping("/{id}") 
 	Client replaceClient (@RequestBody Client newClient,@PathVariable Long id) {
 
 		return repository.findById(id)
@@ -45,7 +45,7 @@ class MainController {
 				client.setDescription(newClient.getDescription());
 				client.setNit(newClient.getNit());
 				client.setFullname(newClient.getFullname());
-				client.setAdress(newClient.getAdress());
+				client.setAddress(newClient.getAddress());
 				client.setPhone(newClient.getPhone());
 				client.setCity(newClient.getCity());
 				client.setState(newClient.getState());
@@ -64,7 +64,7 @@ class MainController {
 			});
 	}
 	
-	@DeleteMapping("/client/{id}")
+	@DeleteMapping("/{id}")
 	void deleteClient(@PathVariable Long id) {
 		repository.deleteById(id);
 	}

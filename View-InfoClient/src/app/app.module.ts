@@ -6,11 +6,17 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { RegistryComponent } from './components/registry/registry.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    ClientsComponent,
+    RegistryComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

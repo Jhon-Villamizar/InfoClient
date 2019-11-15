@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+			<h2 class="text-center my-5">Clients Registration</h2>
+			<form #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)" class="row">
+				<div class="form-group">
+					<input id="id" type="hidden" class="form-control" name="id" #nombre="ngModel"
+					[(ngModel)]="clientService.selectClient.id">
+				</div>
+				<div class="form-group col-md-6">
+					<input id="fullname" type="text" class="form-control" name="fullname" #fullname="ngModel"
+					[(ngModel)]="clientService.selectClient.fullname" placeholder="Full Name*">
+				</div>
+				<div class="form-group col-md-6">
+					<input id="nit" type="text" class="form-control" name="nit" #nit="ngModel"
+					[(ngModel)]="clientService.selectClient.nit" placeholder="Nit*">
+				</div>
+				<div class="form-group col-md-12">
+					<textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
+					[(ngModel)]="clientService.selectClient.description" placeholder="Client Description*"></textarea>
+				</div>
+				<div class="form-group col-md-6">
+					<input id="address" type="text" class="form-control" name="address" #address="ngModel"
+					[(ngModel)]="clientService.selectClient.address" placeholder="Address*">
+				</div>
+				<div class="form-group col-md-6">
+					<input id="phone" type="text" class="form-control" name="phone" #phone="ngModel"
+					[(ngModel)]="clientService.selectClient.phone" placeholder="Phone*">
+				</div>
+				<div class="form-group col-md-4">
+					<input id="city" type="text" class="form-control" name="city" #city="ngModel"
+					[(ngModel)]="clientService.selectClient.city" placeholder="City*">
+				</div>
+				<div class="form-group col-md-4">
+					<input id="state" type="text" class="form-control" name="state" #state="ngModel"
+					[(ngModel)]="clientService.selectClient.state" placeholder="State*">
+				</div>
+				<div class="form-group col-md-4">
+					<input id="country" type="text" class="form-control" name="country" #country="ngModel"
+					[(ngModel)]="clientService.selectClient.country" placeholder="Country*">
+				</div>
+				<div class="form-group col-md-6">
+					<input id="creditlim" type="number" class="form-control" name="creditlim" #creditlim="ngModel"
+					[(ngModel)]="clientService.selectClient.creditlim" placeholder="Credito Limit*">
+				</div>
+				<div class="form-group col-md-6">
+					<input id="avalcredit" type="number" class="form-control" name="avalcredit" #avalcredit="ngModel"
+					[(ngModel)]="clientService.selectClient.avalcredit" placeholder="Available Credit*">
+				</div>
+				<div class="form-group col-md-3">
+					<input id="visitsperc" type="number" class="form-control" name="visitsperc" #visitsperc="ngModel"
+					[(ngModel)]="clientService.selectClient.visitsperc" placeholder="Visit Percentage*">
+				</div>
+				<div class="form-group col-md-3">
+					<input id="date" type="text" class="form-control" name="date" #date="ngModel"
+					[(ngModel)]="clientService.selectClient.date" placeholder="Date*">
+				</div>
+				<div class="form-group col-md-3">
+					<input id="representative" type="text" class="form-control" name="representative" #representative="ngModel"
+					[(ngModel)]="clientService.selectClient.representative" placeholder="Sales Representative*">
+				</div>
+				<div class="form-group col-md-3">
+					<input id="visit" type="number" class="form-control" name="visit" #visit="ngModel"
+					[(ngModel)]="clientService.selectClient.visit" placeholder="Visits*">
+				</div>
+				<div class="form-group col-md-12">
+					<textarea id="descVisit" type="text" class="form-control" name="descVisit" #descVisit="ngModel"
+					[(ngModel)]="clientService.selectClient.descVisit" placeholder="Visit Description*"></textarea>
+				</div>
+				<div class="form-group col-md-12">
+						<button type="submit" class="btn btn-primary">Enviar</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
