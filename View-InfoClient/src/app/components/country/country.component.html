@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+              <h2 class="text-center my-5">Country Registration</h2>
+              <form #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)" class="row">
+                  <div class="form-group">
+                      <input id="id" type="hidden" class="form-control" name="id" #nombre="ngModel"
+                      [(ngModel)]="countryService.selectCountry.id">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="name" type="text" class="form-control" name="name" #name="ngModel"
+                      [(ngModel)]="countryService.selectCountry.name" placeholder="Name*">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="countries" type="text" class="form-control" name="countries" #countries="ngModel"
+                      [(ngModel)]="countryService.selectCountry.countries" placeholder="countries*">
+                  </div>
+                    <div class="form-group col-md-12">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+  

@@ -11,17 +11,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_client")
-@SequenceGenerator(name="seq", initialValue=50, allocationSize=999999999)
 public class Client {
 	
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(name = "nit")
 	private String nit;
@@ -31,6 +29,12 @@ public class Client {
 	private String address;
 	@Column(name = "phone")
 	private String phone;
+	@Column(name = "city")
+	private int city;
+	@Column(name = "state")
+	private int state;
+	@Column(name = "country")
+	private int country;
 	@Column(name = "creditLimit")
 	private int creditLimit;
 	@Column(name = "availableCredit")
@@ -38,7 +42,7 @@ public class Client {
 	@Column(name = "visitPercentage")
 	private int visitPercentage;
 	@Column(name = "description")
-	private int description;
+	private String description;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name= "cities")
 	private City cities;
@@ -83,6 +87,25 @@ public class Client {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	public int getCity() {
+		return city;
+	}
+	public void setCity(int city) {
+		this.city = city;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	public int getCountry() {
+		return country;
+	}
+	public void setCountry(int country) {
+		this.country = country;
+	}
 	public int getCreditLimit() {
 		return creditLimit;
 	}
@@ -101,10 +124,10 @@ public class Client {
 	public void setVisitPercentage(int visitPercentage) {
 		this.visitPercentage = visitPercentage;
 	}
-	public int getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(int description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	public City getCities() {

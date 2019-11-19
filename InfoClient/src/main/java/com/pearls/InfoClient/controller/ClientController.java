@@ -39,7 +39,7 @@ public class ClientController {
 		return clientMapper.mapper(clients);
 	}
 	
-	@GetMapping(path = "/client/{id}")
+	@GetMapping(path = "/clients/{id}")
 	public Client  getClientById(@PathVariable("id") int id) {
 		Client client = clientRepository.findById(id).get();
 		Set<Visit>clients = visitMapper.mapper(client.getClients());
@@ -47,19 +47,19 @@ public class ClientController {
 		return clientMapper.mapper(client);
 	}
 	
-	@PostMapping(path = "/client")
+	@PostMapping(path = "/clients")
 	public String createClient(@RequestBody Client client) {
 		clientRepository.save(client);
 		return "Client Created!";
 	}
 	
-	@PutMapping(path = "/client/{id}")
+	@PutMapping(path = "/clients/{id}")
 	public String updateClient(@PathVariable("id") int id, @RequestBody Client client) {
 		clientRepository.save(client);
 		return "Client Updated!";
 	}
 	
-	@DeleteMapping(path = "/client/{id}")
+	@DeleteMapping(path = "/clients/{id}")
 	public String delete(@PathVariable("id") int id) {
 		clientRepository.deleteById(id);
 		return "Client deleted";

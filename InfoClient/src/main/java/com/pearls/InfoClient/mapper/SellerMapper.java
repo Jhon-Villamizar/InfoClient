@@ -28,6 +28,8 @@ public class SellerMapper {
 		Seller se2 = new Seller();
 		se2.setId(se.getId());
 		se2.setName(se.getName());
+		se2.setDocument(se.getDocument());
+
 		se.setSellers(se.getSellers());
 		
 		Set<Visit> v = visitMapper.mapper(se.getSellers());

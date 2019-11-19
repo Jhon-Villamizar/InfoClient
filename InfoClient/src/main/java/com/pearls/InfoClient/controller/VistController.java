@@ -34,9 +34,9 @@ public class VistController {
 		return visitMapper.mapper(visits);
 	}
 	
-	@GetMapping(path = "/visits/{clientId}")
-	public Visit getVisitById(@PathVariable("clientId") int clientId) {
-		Visit visit = visitRepository.findById(clientId).get();
+	@GetMapping(path = "/visits/{id}")
+	public Visit getVisitById(@PathVariable("id") int id) {
+		Visit visit = visitRepository.findById(id).get();
 		return visitMapper.mapper(visit);
 	}
 
@@ -47,14 +47,14 @@ public class VistController {
 	}
 	
 	@PutMapping(path = "/visits/{id}")
-	public String updateVisit(@PathVariable("clientId") int clientId, @RequestBody Visit visit) {
+	public String updateVisit(@PathVariable("id") int id, @RequestBody Visit visit) {
 		visitRepository.save(visit);
 		return "Visit Update!";
 	}
 	
-	@DeleteMapping(path = "/visits/{clientId}")
-	public String delete(@PathVariable("clientId") int clientId) {
-		visitRepository.deleteById(clientId);
+	@DeleteMapping(path = "/visits/{id}")
+	public String delete(@PathVariable("id") int id) {
+		visitRepository.deleteById(id);
 		return "Visit Deleted";
 	}
 	

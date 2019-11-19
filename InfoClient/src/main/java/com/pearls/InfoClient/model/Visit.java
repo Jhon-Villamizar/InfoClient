@@ -10,18 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_visit")
-@SequenceGenerator(name="seq", initialValue=50, allocationSize=999999999)
 public class Visit {
 	
 	@Id
-	@Column(name = "clientId")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-	private int clientId;
+	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 	@Column(name = "date")
 	private Date date;
 	@Column(name = "srId")
@@ -40,11 +38,11 @@ public class Visit {
 	private Seller sellers;
 	
 	
-	public int getClientId() {
-		return clientId;
+	public int getId() {
+		return id;
 	}
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public Date getDate() {
 		return date;

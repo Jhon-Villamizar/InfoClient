@@ -10,17 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_country")
-@SequenceGenerator(name="seq", initialValue=50, allocationSize=999999999)
+
 public class Country {
 	
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(name = "name")
 	private String name;

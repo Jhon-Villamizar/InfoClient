@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+              <h2 class="text-center my-5">Seller Registration</h2>
+              <form #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)" class="row">
+                  <div class="form-group">
+                      <input id="id" type="hidden" class="form-control" name="id" #nombre="ngModel"
+                      [(ngModel)]="sellerService.selectSeller.id">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="name" type="text" class="form-control" name="name" #name="ngModel"
+                      [(ngModel)]="sellerService.selectSeller.name" placeholder="Name*">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="document" type="text" class="form-control" name="document" #document="ngModel"
+                      [(ngModel)]="sellerService.selectSeller.document" placeholder="document*">
+                  </div>
+                  <div class="form-group col-md-12">
+                      <textarea id="sellers" type="text" class="form-control" name="sellers" #sellers="ngModel"
+                      [(ngModel)]="sellerService.selectSeller.description" placeholder="sellers*"></textarea>
+                  </div>
+                  
+                  <div class="form-group col-md-12">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+  

@@ -10,22 +10,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_state")
-@SequenceGenerator(name="seq", initialValue=50, allocationSize=999999999)
 public class State {
 
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(name="name")
 	private String name;
 	@Column(name="countryId")
-	private String countryId;
+	private int countryId;
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="states")
 	private Set<Client> states;
@@ -43,10 +41,10 @@ public class State {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCountryId() {
+	public int getCountryId() {
 		return countryId;
 	}
-	public void setCountryId(String countryId) {
+	public void setCountryId(int countryId) {
 		this.countryId = countryId;
 	}
 	public Set<Client> getStates() {

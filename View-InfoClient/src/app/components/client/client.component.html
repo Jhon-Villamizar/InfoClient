@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+              <h2 class="text-center my-5">Clients Registration</h2>
+              <form #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)" class="row">
+                  <div class="form-group">
+                      <input id="id" type="hidden" class="form-control" name="id" #id="ngModel"
+                      [(ngModel)]="clientService.selectClient.id">
+                  </div>
+                  <div class="form-group">
+                    <input id="nit" type="hidden" class="form-control" name="nit" #nit="ngModel"
+                    [(ngModel)]="clientService.selectClient.nit"  placeholder="Nit*">
+                </div>
+                  <div class="form-group col-md-6">
+                      <input id="name" type="text" class="form-control" name="name" #name="ngModel"
+                      [(ngModel)]="clientService.selectClient.name" placeholder="Name*">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input id="address" type="text" class="form-control" name="address" #address="ngModel"
+                    [(ngModel)]="clientService.selectClient.address" placeholder="Address*">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <input id="phone" type="text" class="form-control" name="phone" #phone="ngModel"
+                    [(ngModel)]="clientService.selectClient.phone" placeholder="Phone*">
+                </div>
+                <div class="form-group col-md-4">
+                        <select id="city" type="text" class="form-control" name="city" #city="ngModel"
+                        [(ngModel)]="cityService.selectCity.cities" placeholder="city*">
+                            <option *ngFor="let city of cityService.cities" value="">{{city.name}}</option>
+                        </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="state" type="text" class="form-control" name="state" #state="ngModel"
+                    [(ngModel)]="stateService.selectState.states" placeholder="state*">
+                        <option *ngFor="let state of stateService.states" value="">{{state.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select id="countries" type="text" class="form-control" name="countries" #countries="ngModel"
+                    [(ngModel)]="clientService.selectClient.countries" placeholder="countries*">
+                        <option *ngFor="let country of countryServer.countries" value="">{{country.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <input id="creditLimit" type="number" class="form-control" name="creditLimit" #creditLimit="ngModel"
+                    [(ngModel)]="clientService.selectClient.creditLimit" placeholder="Credito Limit*">
+                </div>
+                <div class="form-group col-md-6">
+                    <input id="availableCredit" type="number" class="form-control" name="availableCredit" #availableCredit="ngModel"
+                    [(ngModel)]="clientService.selectClient.availableCredit" placeholder="Available Credit*">
+                </div>
+                <div class="form-group col-md-3">
+                    <input id="visitPercentage" type="number" class="form-control" name="visitPercentage" #visitPercentage="ngModel"
+                    [(ngModel)]="clientService.selectClient.visitPercentage" placeholder="Visit Percentage*">
+                </div>
+                  <div class="form-group col-md-12">
+                      <textarea id="description" type="text" class="form-control" name="description" #description="ngModel"
+                      [(ngModel)]="clientService.selectClient.description" placeholder="Client Description*"></textarea>
+                  </div>
+                  <div class="form-group col-md-12">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+  

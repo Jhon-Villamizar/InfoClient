@@ -21,7 +21,7 @@ public class VisitMapper {
 	
 	public Visit mapper(Visit v) {
 		Visit v2 = new Visit();
-		v2.setClientId(v.getClientId());
+		v2.setId(v.getId());
 		v2.setDate(v.getDate());
 		v2.setSrId(v.getSrId());
 		v2.setNet(v.getNet());

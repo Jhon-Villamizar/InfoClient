@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+              <h2 class="text-center my-5">City Registration</h2>
+              <form #registryForm="ngForm" (ngSubmit)="sendRegistry(registryForm)" class="row">
+                  <div class="form-group">
+                      <input id="id" type="hidden" class="form-control" name="id" #nombre="ngModel"
+                      [(ngModel)]="cityService.selectCity.id">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="name" type="text" class="form-control" name="name" #name="ngModel"
+                      [(ngModel)]="cityService.selectCity.name" placeholder="Name*">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input id="stateId" type="text" class="form-control" name="stateId" #stateId="ngModel"
+                      [(ngModel)]="cityService.selectCity.stateId" placeholder="stateId*">
+                  </div>
+                  <div class="form-group col-md-12">
+                      <input id="cities" type="text" class="form-control" name="cities" #cities="ngModel"
+                      [(ngModel)]="cityService.selectCity.cities" placeholder="Cities*"/>
+                  </div>
+                  <div class="form-group col-md-12">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+  

@@ -9,6 +9,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ClientComponent } from './components/client/client.component';
+import { CountryComponent } from './components/country/country.component';
+import { SellerComponent } from './components/seller/seller.component';
+import { StateComponent } from './components/state/state.component';
+import { VisitComponent } from './components/visit/visit.component';
+import { CityComponent } from './components/city/city.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { UpdateComponent } from './components/update/update.component';
     NavComponent,
     ClientsComponent,
     RegistryComponent,
-    UpdateComponent
+    UpdateComponent,
+    CityComponent,
+    ClientComponent,
+    CountryComponent,
+    SellerComponent,
+    StateComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule,
